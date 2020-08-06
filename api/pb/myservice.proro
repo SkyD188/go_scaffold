@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+message EchoRequest {
+  string Ping = 1;
+}
+
+message EchoResponse {
+  string Pong = 2;
+}
+
+service MyService {
+  rpc Echo(EchoRequest) returns (EchoResponse){}
+}

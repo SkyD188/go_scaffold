@@ -1,0 +1,4 @@
+2020-08-05T13:58:31.692+0800	ERROR	log/log.go:74	Error fetching url..	{"url": "www.google.com", "error": "Get \"www.google.com\": unsupported protocol scheme \"\""}
+2020-08-05T13:58:31.838+0800	INFO	log/log.go:79	Success..	{"statusCode": "200 OK", "url": "http://www.baidu.com"}
+2020-08-05T14:14:23.612+0800	ERROR	log/log.go:76	Error fetching url..	{"url": "www.google.com", "error": "Get \"www.google.com\": unsupported protocol scheme \"\""}
+2020-08-05T14:14:23.752+0800	INFO	log/log.go:81	Success..	{"statusCode": "200 OK", "url": "http://www.baidu.com"}

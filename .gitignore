@@ -1,0 +1,8 @@
+.idea/
+
+./internal/pkg/log/*.log
+
+
+*.toml
+
+test_main.go
