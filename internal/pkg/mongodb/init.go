@@ -2,10 +2,12 @@ package mongodb
 
 import (
 	"context"
+	"go_scaffold/config"
+	"log"
+
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"log"
 )
 
 type M = bson.M
@@ -15,12 +17,12 @@ var (
 	err     error
 )
 
-func InitMongo(address string, poolSize uint64) {
+func InitMongo() {
 
-	clientOptions := options.Client().ApplyURI(address)
+	clientOptions := options.Client().ApplyURI(config.GetConf().Mongo.Address)
 
 	//连接池
-	clientOptions.SetMaxPoolSize(poolSize)
+	clientOptions.SetMaxPoolSize(config.GetConf().Mongo.MaxPoolSize)
 	// Connect to MongoDB
 	mongoDB, err = mongo.Connect(context.Background(), clientOptions)
 	if err != nil {

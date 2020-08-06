@@ -1,4 +1,4 @@
-module micro_service
+module go_scaffold
 
 go 1.14
 

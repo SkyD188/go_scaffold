@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	"go_scaffold/config"
 	"log"
 	"time"
 
@@ -12,8 +13,8 @@ var (
 	err     error
 )
 
-func InitMysql(address string, idleConn, openConn int, maxLifeTime time.Duration) {
-	mysqlDB, err = sqlx.Open("mysql", address)
+func InitMysql() {
+	mysqlDB, err = sqlx.Open("mysql", config.GetConf().Mysql.Address)
 	// 打印日志
 	if err != nil {
 		panic(err)
@@ -22,8 +23,8 @@ func InitMysql(address string, idleConn, openConn int, maxLifeTime time.Duration
 	if err != nil {
 		panic(err)
 	}
-	mysqlDB.SetMaxIdleConns(idleConn)
-	mysqlDB.SetMaxOpenConns(openConn)
-	mysqlDB.SetConnMaxLifetime(maxLifeTime)
+	mysqlDB.SetMaxIdleConns(config.GetConf().Mysql.MaxIdleConn)
+	mysqlDB.SetMaxOpenConns(config.GetConf().Mysql.MaxOpenConn)
+	mysqlDB.SetConnMaxLifetime(time.Second * 5)
 	log.Println("Mysql is Collection!!!")
 }
