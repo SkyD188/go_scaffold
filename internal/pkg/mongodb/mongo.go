@@ -23,7 +23,7 @@ func MongoDBCurd(database string, collection string, opts ...*options.Collection
 	return &mongoCollection{Timeout: 5, Collection: dbCollection}
 }
 func getCollection(database string, collection string, opts ...*options.CollectionOptions) *mongo.Collection {
-	return mongoDB.Database(database).Collection(collection, opts...)
+	return getMongoDB().Database(database).Collection(collection, opts...)
 }
 
 func (m *mongoCollection) FindOne(filter interface{}, result interface{}, opts ...*options.FindOneOptions) (err error) {
