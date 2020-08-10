@@ -1,7 +1,6 @@
 package config
 
 type Config struct {
-	Keys  string
 	Mongo mongoConf
 	Http  httpConf
 	Mysql mysqlConf
