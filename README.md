@@ -138,10 +138,6 @@ func GetContext(param []string) (ctx contex.Context, err error) {
 
 githook脚本文件
 
-### `/init`
-
-读取配置文件到全局变量，初始化项目信息
-
 ### `/internal`
 
 项目内部引用的包
