@@ -1,14 +1,13 @@
 package main
 
 import (
-	"go_scaffold/config"
-	route "go_scaffold/internal/app/http"
-
-	"github.com/kataras/iris"
+	"go_scaffold/app/deps"
+	"go_scaffold/app/server/http"
 )
 
 func main() {
-	app := iris.New()
-	route.InitHttpRoute(app)
-	app.Run(iris.Addr(config.GetConf().Http.Listen))
+
+	deps.InitProject()
+	//deps.LoadConfig()
+	http.RunHTTPServer(deps.AppConfig.HttpListen)
 }

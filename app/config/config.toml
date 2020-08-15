@@ -1,0 +1,24 @@
+httpListen = ":6126"
+grpcListen = ":port"
+
+[mongo]
+address = "mongodb://user:pwd@ip/admin"
+maxPoolSize = 200
+
+
+[mysql]
+address = "user:pwd@/xxx?charset=utf8&parseTime=True&loc=Local"
+maxIdleConn = 10
+maxOpenConn = 10
+
+[redis]
+address = ""
+password = ""
+maxPoolSize = 200 # 线程池大小
+
+[queueRedis]
+address = "ip"
+password = "xxx"
+maxPoolSize = 200 # 线程池大小
+
+
